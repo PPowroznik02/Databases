@@ -1,0 +1,34 @@
+zamowienia(id_produktu, nazwa_produktu, id_klienta, nazwa_klienta,data_zamowienia, cena_produktu, ilość, VAT, suma_brutto, suma_netto)
+1. Zaleznosci funkcyjne:
+	-id_produktu -> nazwa_produktu, cena_produktu, VAT
+	-nazwa_produktu -> id_produktu, cena_produktu, VAT
+	-id_klienta -> nazwa_klienta, 
+	-nazwa_klienta -> id_kienta
+	-ilosc, cena_produktu, ->  suma_netto
+	-ilosc, cena_produktu, VAT ->  suma_brutto, suma_netto
+	-suma_netto, VAT -> suma_brutto
+	-suma_brutto, VAT -> suma_netto
+	-suma_netto, suma_brutto -> VAT
+	-cena_produktu, suma_netto -> ilosc
+	-cena_produktu, suma_brutto, VAT -> ilosc, suma_netto
+	-ilosc, suma_netto -> cena_produktu
+	-ilosc, suma_brutto, VAT-> cena_produktu, suma_netto
+	-cena_produktu, ilosc, suma_brutto -> VAT, suma_netto
+
+2. Klucze kandydujace:
+	-id_klienta, id_produktu, data_zamowienia
+	-id_klienta, nazwa_produktu, data_zamowienia
+	-nazwa_klienta, id_produktu, data_zamowienia
+	-nazwa_klienta, nazwa_produktu, data_zamowienia
+
+
+pomieszczenia(id_pomieszczenia, numer_pomieszczenia, id_budynku, powierzchnia, liczba_okien, liczba_drzwi, ulica, miasto, kod_pocztowy) 
+3. Zaleznosci funkcyjne:
+	-kod_pocztowy -> miasto
+	-id_pomieszczenia -> numer_pomieszczenia, id_budynku, powierzchnia, liczba_okien, liczba_drzwi, ulica, miasto, kod_pocztowy
+	-numer_pomieszczenia, id_budynku -> id_pomieszczenia, powierzchnia, liczba_okien, liczba_drzwi, ulica, miasto, kod_pocztowy
+	-id_budynku -> ulica, miasto, kod_pocztowy
+
+4. Klucze kandydujace:
+	-id_pomieszczenia
+	-id_budynku, numer_pomieszczenia
